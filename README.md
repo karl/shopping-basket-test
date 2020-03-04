@@ -37,7 +37,7 @@ Somewhere on the product page there will be a basket summary showing the total n
 
 On this page will be a link or button leading to the checkout page.
 
-The product information should be retrieved from the server by your app. The endpoint is `GET http://localhost:5000/api/products`. More detailed API documentation is available in [api.md](api.md).
+The product information should be retrieved from the server by your app. The endpoint is `GET http://localhost:5000/api/products`. More detailed API documentation is available in [the swagger documentation](http://localhost:5000/api-docs/) whent the server is running.
 
 ### Checkout page
 
@@ -45,7 +45,7 @@ This page will list the products currently in the basket, with the quantity, and
 
 There will be a button which checks ou
 
-The endpoint to checkout a basket is is `POST http://localhost:5000/api/checkout`, with the product IDs in the body. More detailed API documentation is available in [api.md](api.md).
+The endpoint to checkout a basket is is `POST http://localhost:5000/api/checkout`, with the product IDs in the body. More detailed API documentation is available in [the swagger documentation](http://localhost:5000/api-docs/) when the server is running.
 
 The ability to edit the quantities or remove items is out of scope.
 

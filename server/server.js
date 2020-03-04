@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const swaggerUI = require('swagger-ui-express');
+
+const swaggerDocument = require("./swagger").swaggerDocument;
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -10,16 +13,16 @@ const productsLookup = {
     "1": {
         id: "1",
         name: "Teapot",
+        description: "Short and stout",
         color: "Green",
         price: 1.99,
-        imageUrl: "/static/teapot.jpg",
     },
     "2": {
         id: "2",
         name: "Pillowcase",
+        description: "Everybody's looking for something",
         color: "Yellow",
         price: 4.99,
-        imageUrl: "/static/pillowcase.jpg",
     }
 }
 
@@ -27,13 +30,13 @@ const productsAsArray = Object.keys(productsLookup).map(key => productsLookup[ke
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.get('/api/products', (req, res) => {
   res.send({ products: productsAsArray });
 });
 
 app.get('/api/products/:id', (req, res) => {
-  console.log(req.params);
   const id = req.params.id;
   if (!id) {
     res.status(400).send({ error: "No ID provided" });
@@ -48,6 +51,7 @@ app.get('/api/products/:id', (req, res) => {
 });
 
 app.post('/api/checkout', (req, res) => {
+  console.log(req.body);
   const basket = req.body.products;
   if (!basket) {
     res.status(400).send({ error: "Invalid basket: No `products` field" });
@@ -55,6 +59,10 @@ app.post('/api/checkout', (req, res) => {
   }
   if (!Array.isArray(basket)) {
     res.status(400).send({ error: "Invalid basket: `products` field should be an array of product IDs" });
+    return;
+  }
+  if (!basket.length) {
+    res.status(400).send({ error: "Invalid basket: basket is empty (no product IDs were included)" });
     return;
   }
   const invalidProductIds = basket.filter(id => !(id in productsLookup));
