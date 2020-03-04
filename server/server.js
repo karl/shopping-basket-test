@@ -20,7 +20,7 @@ const productsLookup = {
     "2": {
         id: "2",
         name: "Pillowcase",
-        description: "Everybody's looking for something",
+        description: "Sweet dreams",
         color: "Yellow",
         price: 4.99,
     }
@@ -38,7 +38,7 @@ app.get('/api/products', (req, res) => {
 
 app.get('/api/products/:id', (req, res) => {
   const id = req.params.id;
-  if (!id) {
+  if (!id && id !== 0) {
     res.status(400).send({ error: "No ID provided" });
     return;
   }
@@ -70,7 +70,7 @@ app.post('/api/checkout', (req, res) => {
     res.status(400).send({ error: "Invalid basket: some product IDs were not found", invalidProductIds });
     return;
   }
-  res.send({ "success": true, orderNumber: currentOrderNumber++ });
+  res.send({ orderNumber: currentOrderNumber++ });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -97,9 +97,6 @@ const checkout = {
                         schema: {
                             type: "object",
                             properties: {
-                                success: {
-                                    type: "boolean",
-                                },
                                 orderNumber: {
                                     type: "number",
                                 }
@@ -109,7 +106,6 @@ const checkout = {
                             success: {
                                 summary: "A successful order",
                                 value: {
-                                    success: true,
                                     orderNumber: 1234,
                                 }
                             }
