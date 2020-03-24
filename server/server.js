@@ -19,6 +19,7 @@ var currentOrderNumber = 1;
 const productsLookup = {
   "1": {
     id: "1",
+    image: "https://via.placeholder.com/200",
     name: "Teapot",
     description: "Short and stout",
     color: "Green",
@@ -26,6 +27,7 @@ const productsLookup = {
   },
   "2": {
     id: "2",
+    image: "https://via.placeholder.com/200",
     name: "Pillowcase",
     description: "Sweet dreams",
     color: "Yellow",
