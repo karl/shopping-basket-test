@@ -29,7 +29,7 @@ You need to build a website that can show the products to users, allow them to s
 
 ### Product Listing Page
 
-This page will list all the products which are available, with their name, price, and buttons to add or remove the product from the basket.
+This page will list all the products which are available, with their name, price, image, and buttons to add or remove the product from the basket.
 
 Each product can be added to the basket multiple times.
 
