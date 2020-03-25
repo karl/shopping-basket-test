@@ -29,7 +29,7 @@ You need to build a website that can show the products to users, allow them to s
 
 ### Product Listing Page
 
-This page will list all the products which are available, with their name, price, and a button to add them to the basket.
+This page will list all the products which are available, with their name, price, and buttons to add or remove the product from the basket.
 
 Each product can be added to the basket multiple times.
 
@@ -43,11 +43,11 @@ The product information should be retrieved from the server by your app. The end
 
 This page will list the products currently in the basket, with the quantity, and the total price (quantity x product price).
 
-There will be a button which checks ou
+There will be a button which checks out the basket.
 
 The endpoint to checkout a basket is is `POST http://localhost:5000/api/checkout`, with the product IDs in the body. More detailed API documentation is available in [the swagger documentation](http://localhost:5000/api-docs/) when the server is running.
 
-The ability to edit the quantities or remove items is out of scope.
+The ability to edit the quantities or remove items from this page is out of scope.
 
 ### Success page
 
@@ -57,7 +57,7 @@ Returning to another page after successfully checking out will show an empty bas
 
 ## Wireframes
 
-Attached are some wireframes from our design team demonstrating the functionality of the page.
+We have included a set of wireframes from our design team demonstrating the functionality of the page. You can find these in the `/wireframes` directory.
 
 Since this is a prototype, there are no designs, and you will not be judged on the style of the page, as long as it is clear and useable.
 
