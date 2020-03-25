@@ -83,7 +83,7 @@ app.post("/api/checkout", (req, res) => {
     if (isError()) {
       res.status(500).send({ error: "Unexpected server error" });
     } else {
-      console.log(req.body);
+      console.log("Body", req.body);
       const basket = req.body.products;
       if (!basket) {
         res.status(400).send({ error: "Invalid basket: No `products` field" });
