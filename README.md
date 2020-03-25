@@ -21,7 +21,7 @@ To use the provided template, type `yarn` to install dependencies then `yarn dev
 
 We have a server running which provides endpoints for querying the available products, as well as sending orders.
 
-You need to build a website that can show the products to users, allow them to shop by adding products to a basket, then checkout the basket (which will post their selection of products back to the to the server).
+You need to build a website that can show the products to users, allow them to shop by adding products to a basket, then checkout the basket (which will post their selection of products back to the server).
 
 `yarn server` will start the server on port 5000, or `yarn dev` will start both the server and the skeleton react app together.
 
