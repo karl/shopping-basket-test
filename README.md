@@ -25,7 +25,7 @@ You need to build a website that can show the products to users, allow them to s
 
 `yarn server` will start the server on port 5000, or `yarn dev` will start both the server and the skeleton react app together.
 
-## Specific requirements
+You are required to build the following pages:
 
 ### Product Listing Page
 
