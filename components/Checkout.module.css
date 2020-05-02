@@ -1,0 +1,24 @@
+.page {
+
+}
+
+.totalWrapper {
+  text-align: right;
+}
+
+.total {
+  font-size: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.error {
+  padding-top: 20px;
+  text-align: right;
+  color: #800;
+  font-weight: bold;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export const Basket = ({ basket }) => {
   return (
@@ -14,7 +15,9 @@ export const Basket = ({ basket }) => {
             </div>
           ))}
       </div>
-      <button>Checkout</button>
+      <Link href="/checkout">
+        <a>Checkout</a>
+      </Link>
     </div>
   );
 };
