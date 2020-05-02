@@ -2,6 +2,7 @@
 
 A simple shopping basic example tech test.
 
+Try it out: https://shopping-basket-test.now.sh/
 
 ## Getting Started
 
