@@ -1,12 +1,18 @@
 import React from 'react';
+import style from './Product.module.css';
 
 export const Product = ({ product }) => (
-  <div>
-    <div>{product.id}</div>
-    <img src={product.image} alt={product.name} />
-    <div>{product.name}</div>
-    <div>{product.description}</div>
-    <div>{product.color}</div>
-    <div>{product.price}</div>
+  <div className={style.product}>
+    <img className={style.image} src={product.image} alt={product.name} />
+    <div className={style.info}>
+      <h4 className={style.name}>{product.name}</h4>
+      <div className={style.description}>{product.description}</div>
+      <div className={style.color}>{product.color}</div>
+    </div>
+    <div className={style.price}>£{product.price}</div>
+    <div className={style.actions}>
+      <button>Add</button>
+      <button>Remove</button>
+    </div>
   </div>
 );

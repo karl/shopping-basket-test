@@ -1,0 +1,17 @@
+.page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main {
+  flex: 1 0 300px;
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+  padding: 20px;
+}
+
+.products {
+}

@@ -1,22 +1,17 @@
 import React from 'react';
-import useSWR from 'swr';
-import { Product } from '../components/Product';
+import { ProductListing } from '../components/ProductListing';
+import { productsAsArray } from '../data';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const Index = ({ products }) => {
+  return <ProductListing products={products} />;
+};
 
-export default function Index() {
-  const { data, error } = useSWR('/api/products', fetcher);
+export const getServerSideProps = async (context) => {
+  return {
+    props: {
+      products: productsAsArray,
+    },
+  };
+};
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-
-  const { products } = data;
-
-  return (
-    <ul>
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
-      ))}
-    </ul>
-  );
-}
+export default Index;
