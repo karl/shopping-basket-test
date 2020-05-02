@@ -7,29 +7,23 @@ let currentOrderNumber = 1;
 export default async (req, res) => {
   try {
     if (req.method !== 'POST') {
-      console.log('invalid request method', req.method);
       res
         .status(404)
         .send({ error: 'Only POST method is supported for this route' });
       return;
     }
 
-    console.log('body', req.body);
-
     await delay(1000);
 
     if (isError()) {
-      console.log('sending error');
       res.status(500).send({ error: 'Unexpected server error' });
     } else {
       const basket = req.body.basket;
       if (!basket) {
-        console.log('invalid basket 1');
         res.status(400).send({ error: 'Invalid basket: No `basket` field' });
         return;
       }
       if (!Array.isArray(basket)) {
-        console.log('invalid basket 2');
         res.status(400).send({
           error:
             'Invalid basket: `basket` field should be an array of objects with id and count fields',
@@ -37,7 +31,6 @@ export default async (req, res) => {
         return;
       }
       if (!basket.length) {
-        console.log('invalid basket 3');
         res.status(400).send({
           error:
             'Invalid basket: basket is empty (no product IDs were included)',
@@ -48,7 +41,6 @@ export default async (req, res) => {
         .map((item) => item.id)
         .filter((id) => !(id in productsLookup));
       if (invalidProductIds.length) {
-        console.log('invalid products', invalidProductIds);
         res.status(400).send({
           error: 'Invalid basket: some product IDs were not found',
           invalidProductIds,
@@ -56,7 +48,6 @@ export default async (req, res) => {
         return;
       }
 
-      console.log('success');
       res.send({ orderNumber: currentOrderNumber++ });
     }
   } catch (error) {

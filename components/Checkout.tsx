@@ -39,7 +39,6 @@ export const Checkout = ({ basket, dispatch }) => {
     }
 
     const { orderNumber } = await res.json();
-    console.log('orderNumber', orderNumber);
     dispatch({ type: 'CLEAR' });
     Router.push(`/success/${orderNumber}`);
   };

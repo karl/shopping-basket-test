@@ -4,8 +4,6 @@ import '../styles.css';
 const initialState = [];
 
 const reducer = (basket, action) => {
-  console.log('reducer', basket, action);
-
   switch (action.type) {
     case 'ADD': {
       const existing = basket.find(
@@ -55,7 +53,6 @@ const reducer = (basket, action) => {
 
 const App = ({ Component, pageProps }) => {
   const [basket, dispatch] = useReducer(reducer, initialState);
-  console.log('basket', basket);
 
   return <Component {...pageProps} basket={basket} dispatch={dispatch} />;
 };
