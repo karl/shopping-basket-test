@@ -25,6 +25,11 @@
 .description {
 }
 
+.color {
+  padding-top: 10px;
+  color: #888;
+}
+
 .price {
   font-size: 20px;
   padding-left: 10px;

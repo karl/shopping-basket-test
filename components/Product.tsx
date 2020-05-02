@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Product.module.css';
+import { formatPrice } from '../utils/formatPrice';
 
 export const Product = ({ product, onAdd, onRemove }) => (
   <div className={style.product}>
@@ -9,7 +10,7 @@ export const Product = ({ product, onAdd, onRemove }) => (
       <div className={style.description}>{product.description}</div>
       <div className={style.color}>{product.color}</div>
     </div>
-    <div className={style.price}>£{product.price}</div>
+    <div className={style.price}>{formatPrice(product.price)}</div>
     <div className={style.actions}>
       <button onClick={() => onAdd(product)}>Add</button>
       <button onClick={() => onRemove(product)}>Remove</button>

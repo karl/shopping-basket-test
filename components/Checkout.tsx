@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from './Checkout.module.css';
 import { CheckoutProduct } from './CheckoutProduct';
 import Router from 'next/router';
+import { formatPrice } from '../utils/formatPrice';
 
 export const Checkout = ({ basket, dispatch }) => {
   const [state, setState] = useState('READY');
@@ -56,7 +57,7 @@ export const Checkout = ({ basket, dispatch }) => {
       </div>
 
       <div className={styles.totalWrapper}>
-        Total to pay <span className={styles.total}>£{total}</span>
+        Total to pay <span className={styles.total}>{formatPrice(total)}</span>
       </div>
 
       <div className={styles.actions}>
